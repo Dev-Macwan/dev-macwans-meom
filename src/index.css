@@ -1,96 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm, motherly palette */
+    --background: 35 30% 96%;
+    --foreground: 25 30% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 35 25% 98%;
+    --card-foreground: 25 30% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 35 25% 98%;
+    --popover-foreground: 25 30% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Soft terracotta/dusty rose */
+    --primary: 15 45% 65%;
+    --primary-foreground: 35 30% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm cream */
+    --secondary: 35 20% 92%;
+    --secondary-foreground: 25 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 15% 90%;
+    --muted-foreground: 25 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Soft sage accent */
+    --accent: 140 15% 85%;
+    --accent-foreground: 140 20% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 50% 60%;
+    --destructive-foreground: 35 30% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 15 45% 65%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom tokens for Meom */
+    --warmth: 25 60% 75%;
+    --warmth-glow: 25 70% 85%;
+    --mother-text: 25 30% 30%;
+    --night-soft: 240 10% 20%;
+    
+    /* Typography */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 35 25% 95%;
+    --sidebar-foreground: 25 30% 25%;
+    --sidebar-primary: 15 45% 65%;
+    --sidebar-primary-foreground: 35 30% 98%;
+    --sidebar-accent: 35 20% 90%;
+    --sidebar-accent-foreground: 25 30% 25%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 15 45% 65%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 25 20% 8%;
+    --foreground: 35 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 18% 12%;
+    --card-foreground: 35 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 18% 12%;
+    --popover-foreground: 35 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 15 50% 70%;
+    --primary-foreground: 25 20% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 15% 18%;
+    --secondary-foreground: 35 20% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 35 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 140 12% 25%;
+    --accent-foreground: 140 15% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 50% 50%;
+    --destructive-foreground: 35 20% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 15 50% 70%;
+
+    --warmth: 25 50% 60%;
+    --warmth-glow: 25 40% 30%;
+    --mother-text: 35 20% 85%;
+    --night-soft: 35 15% 85%;
+
+    --sidebar-background: 25 18% 10%;
+    --sidebar-foreground: 35 20% 90%;
+    --sidebar-primary: 15 50% 70%;
+    --sidebar-primary-foreground: 25 20% 10%;
+    --sidebar-accent: 25 15% 18%;
+    --sidebar-accent-foreground: 35 20% 90%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 15 50% 70%;
   }
 }
 
@@ -100,6 +111,83 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .meom-container {
+    @apply min-h-screen flex flex-col items-center justify-center px-6 py-12;
+  }
+
+  .meom-card {
+    @apply bg-card rounded-2xl p-8 md:p-12 shadow-sm border border-border/50 max-w-md w-full;
+  }
+
+  .meom-heading {
+    font-family: var(--font-heading);
+    @apply text-3xl md:text-4xl font-medium text-foreground tracking-tight;
+  }
+
+  .meom-subtext {
+    @apply text-muted-foreground text-base md:text-lg leading-relaxed;
+  }
+
+  .meom-input {
+    @apply w-full bg-secondary/50 border-border/50 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all duration-300;
+  }
+
+  .meom-button {
+    @apply w-full bg-primary text-primary-foreground rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:opacity-90 active:scale-[0.98];
+  }
+
+  .meom-button-secondary {
+    @apply w-full bg-secondary text-secondary-foreground rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:bg-secondary/80 active:scale-[0.98];
+  }
+
+  .meom-section {
+    @apply bg-card rounded-2xl p-6 border border-border/30 transition-all duration-300 hover:shadow-md hover:border-border/50;
+  }
+
+  .meom-section-title {
+    font-family: var(--font-heading);
+    @apply text-xl font-medium text-foreground mb-4;
+  }
+
+  .meom-textarea {
+    @apply w-full bg-secondary/30 border-0 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:ring-2 focus:ring-primary/20 resize-none transition-all duration-300;
+    min-height: 120px;
+  }
+
+  .mother-reply {
+    @apply bg-gradient-to-br from-primary/10 to-warmth/10 rounded-xl p-4 border-l-4 border-primary/40 italic;
+    color: hsl(var(--mother-text));
+  }
+}
+
+@layer utilities {
+  .text-warmth {
+    color: hsl(var(--warmth));
+  }
+
+  .bg-warmth {
+    background-color: hsl(var(--warmth));
+  }
+
+  .bg-warmth-glow {
+    background-color: hsl(var(--warmth-glow));
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
   }
 }
