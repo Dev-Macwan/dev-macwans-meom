@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { getMeomData } from '@/lib/meomStorage';
 import { format } from 'date-fns';
 import { LogOut } from 'lucide-react';
-import TalkToMother from '@/components/TalkToMother';
+import PhotoFrames from '@/components/PhotoFrames';
+import TalkToMummy from '@/components/TalkToMummy';
 import PraySection from '@/components/PraySection';
 import BestMemory from '@/components/BestMemory';
 import WorstPart from '@/components/WorstPart';
@@ -55,24 +56,29 @@ const Home = () => {
 
         {/* Sections */}
         <div className="space-y-6">
+          {/* Photo Frames at the top */}
           <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <TalkToMother />
+            <PhotoFrames />
+          </div>
+
+          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <TalkToMummy />
           </div>
           
-          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <PraySection />
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <BestMemory />
             </div>
-            <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <WorstPart />
             </div>
           </div>
           
-          <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <TaskList />
           </div>
         </div>
