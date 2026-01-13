@@ -1,16 +1,30 @@
 import { useNavigate } from 'react-router-dom';
-import { getMeomData } from '@/lib/meomStorage';
 import { useEffect } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Welcome = () => {
+  const { user, userProfile, loading } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const data = getMeomData();
-    if (data?.isSetup) {
-      navigate('/login');
+    if (!loading) {
+      if (user && userProfile) {
+        navigate('/home');
+      } else if (user && !userProfile) {
+        navigate('/setup-name');
+      }
     }
-  }, [navigate]);
+  }, [user, userProfile, loading, navigate]);
+
+  if (loading) {
+    return (
+      <div className="meom-container">
+        <div className="meom-card animate-fade-in text-center">
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="meom-container">
@@ -22,7 +36,7 @@ const Welcome = () => {
         
         <div className="mt-12">
           <button
-            onClick={() => navigate('/setup-name')}
+            onClick={() => navigate('/auth')}
             className="meom-button"
           >
             Continue
