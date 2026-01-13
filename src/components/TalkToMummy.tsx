@@ -132,24 +132,27 @@ const TalkToMummy = () => {
         </div>
 
         {/* Input Area */}
-        <div className="border-t border-border/50 p-3 bg-background/50">
-          <div className="flex gap-2 items-end">
+        <div className="border-t border-border/50 p-4 bg-background/50">
+          <div className="space-y-3">
             <textarea
               ref={inputRef}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Type your message..."
-              className="flex-1 resize-none bg-muted/30 border border-border/50 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50 min-h-[44px] max-h-32"
-              rows={1}
+              placeholder="Tell mummy everything about your day... how are you feeling? What happened? Write as much as you want, beta..."
+              className="w-full resize-none bg-muted/30 border border-border/50 rounded-xl px-4 py-4 text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50 min-h-[140px]"
+              rows={6}
             />
-            <button
-              onClick={handleSubmit}
-              disabled={!message.trim() || isTyping}
-              className="meom-button !py-2.5 !px-4 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Send size={18} />
-            </button>
+            <div className="flex justify-end">
+              <button
+                onClick={handleSubmit}
+                disabled={!message.trim() || isTyping}
+                className="meom-button !py-2.5 !px-5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              >
+                <span>Send to Mummy</span>
+                <Send size={16} />
+              </button>
+            </div>
           </div>
         </div>
       </div>
