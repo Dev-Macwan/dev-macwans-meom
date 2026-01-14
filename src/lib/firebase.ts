@@ -6,12 +6,12 @@ import { getFirestore } from 'firebase/firestore';
 // Firebase configuration - these are publishable keys safe for client-side use
 // Security is handled by Firestore rules, not these keys
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBvpg1BvH8mXyBDc1BvpMOvQAgyHKsfwZM",
+  authDomain: "meom-b2490.firebaseapp.com",
+  projectId: "meom-b2490",
+  storageBucket: "meom-b2490.firebasestorage.app",
+  messagingSenderId: "1043615472730",
+  appId: "1:1043615472730:web:377a514aa0c94c121fcc63"
 };
 
 // Initialize Firebase
