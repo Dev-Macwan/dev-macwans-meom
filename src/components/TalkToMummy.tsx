@@ -158,7 +158,10 @@ const TalkToMummy = () => {
         {/* Input Area */}
         <div className="border-t border-border/50 p-4 bg-background/50">
           <div className="space-y-3">
-            <SimpleTextToolbar style={textStyle} onStyleChange={setTextStyle} />
+            <div className="flex items-center gap-3">
+              <div className="breathing-dot" title="Take a breath..." />
+              <SimpleTextToolbar style={textStyle} onStyleChange={setTextStyle} />
+            </div>
             <textarea
               ref={inputRef}
               value={message}
