@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { getMeomData, getTodayEntry, saveTodayEntry, generateMotherReply, ChatMessage } from '@/lib/meomStorage';
 import { Send } from 'lucide-react';
+import SimpleTextToolbar, { TextStyle } from './SimpleTextToolbar';
 
 // Day-based background classes for emotional variety
 const dayBackgrounds = [
@@ -18,6 +19,12 @@ const TalkToMummy = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [name, setName] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [textStyle, setTextStyle] = useState<TextStyle>({
+    isBold: false,
+    isItalic: false,
+    fontSize: 'normal',
+    textColor: 'inherit',
+  });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -151,13 +158,20 @@ const TalkToMummy = () => {
         {/* Input Area */}
         <div className="border-t border-border/50 p-4 bg-background/50">
           <div className="space-y-3">
+            <SimpleTextToolbar style={textStyle} onStyleChange={setTextStyle} />
             <textarea
               ref={inputRef}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Tell mummy everything about your day... how are you feeling? What happened? Write as much as you want, beta..."
-              className="w-full resize-none bg-muted/30 border border-border/50 rounded-xl px-4 py-4 text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50 min-h-[140px]"
+              className="w-full resize-none bg-muted/30 border border-border/50 rounded-xl px-4 py-4 leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50 min-h-[140px]"
+              style={{
+                fontWeight: textStyle.isBold ? 'bold' : 'normal',
+                fontStyle: textStyle.isItalic ? 'italic' : 'normal',
+                fontSize: textStyle.fontSize === 'small' ? '0.875rem' : textStyle.fontSize === 'large' ? '1.125rem' : '1rem',
+                color: textStyle.textColor,
+              }}
               rows={6}
             />
             <div className="flex justify-end">
