@@ -6,9 +6,22 @@
 
 @layer base {
   :root {
-    /* Warm, motherly palette */
-    --background: 35 30% 96%;
+    /* Warm, motherly palette - soft warm off-white/light beige */
+    --background: 40 30% 97%;
     --foreground: 25 30% 20%;
+    
+    /* Day-based Talk to Mummy backgrounds (Monday-Sunday) */
+    --mummy-monday: 30 35% 95%;      /* Warm care - soft peach cream */
+    --mummy-tuesday: 35 30% 95%;     /* Gentle warmth - warm beige */
+    --mummy-wednesday: 25 25% 94%;   /* Tiredness comfort - soft taupe */
+    --mummy-thursday: 45 40% 96%;    /* Hope - light golden cream */
+    --mummy-friday: 20 30% 95%;      /* Relief - soft rose beige */
+    --mummy-saturday: 50 35% 96%;    /* Joy - warm honey cream */
+    --mummy-sunday: 35 25% 96%;      /* Calm rest - peaceful cream */
+    
+    /* Spiritual pray section */
+    --pray-bg: 35 50% 96%;           /* Saffron-tinted cream */
+    --pray-accent: 30 45% 92%;       /* Temple warmth */
 
     --card: 35 25% 98%;
     --card-foreground: 25 30% 20%;
@@ -152,6 +165,20 @@
 
   .meom-section {
     @apply bg-card rounded-2xl p-6 border border-border/30 transition-all duration-300 hover:shadow-md hover:border-border/50;
+  }
+
+  /* Talk to Mummy day-based backgrounds */
+  .mummy-bg-monday { background-color: hsl(var(--mummy-monday)); }
+  .mummy-bg-tuesday { background-color: hsl(var(--mummy-tuesday)); }
+  .mummy-bg-wednesday { background-color: hsl(var(--mummy-wednesday)); }
+  .mummy-bg-thursday { background-color: hsl(var(--mummy-thursday)); }
+  .mummy-bg-friday { background-color: hsl(var(--mummy-friday)); }
+  .mummy-bg-saturday { background-color: hsl(var(--mummy-saturday)); }
+  .mummy-bg-sunday { background-color: hsl(var(--mummy-sunday)); }
+
+  /* Pray section spiritual background */
+  .pray-section-bg {
+    background: linear-gradient(135deg, hsl(var(--pray-bg)) 0%, hsl(var(--pray-accent)) 100%);
   }
 
   .meom-section-title {

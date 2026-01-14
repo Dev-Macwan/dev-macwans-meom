@@ -16,7 +16,7 @@ const PraySection = () => {
   };
 
   return (
-    <div className="meom-section">
+    <div className="meom-section pray-section-bg">
       <h2 className="meom-section-title">Pray to Umiya Maa</h2>
       
       <textarea
