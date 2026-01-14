@@ -191,6 +191,22 @@
     min-height: 120px;
   }
 
+  .breathing-dot {
+    @apply w-3 h-3 rounded-full bg-primary/40;
+    animation: gentle-breathe 4s ease-in-out infinite;
+  }
+
+  @keyframes gentle-breathe {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+  }
+
   .mother-reply {
     @apply bg-gradient-to-br from-primary/10 to-warmth/10 rounded-xl p-4 border-l-4 border-primary/40 italic;
     color: hsl(var(--mother-text));

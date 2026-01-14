@@ -26,7 +26,10 @@ const PraySection = () => {
     <div className="meom-section pray-section-bg">
       <h2 className="meom-section-title">Pray to Umiya Maa</h2>
       
-      <SimpleTextToolbar style={textStyle} onStyleChange={setTextStyle} />
+      <div className="flex items-center gap-3 mb-2">
+        <div className="breathing-dot" title="Take a breath..." />
+        <SimpleTextToolbar style={textStyle} onStyleChange={setTextStyle} />
+      </div>
       <textarea
         value={prayer}
         onChange={(e) => setPrayer(e.target.value)}
