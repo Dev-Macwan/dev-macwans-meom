@@ -1,6 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { getMeomData, getTodayEntry, saveTodayEntry, generateMotherReply, ChatMessage } from '@/lib/meomStorage';
 import { Send } from 'lucide-react';
+
+// Day-based background classes for emotional variety
+const dayBackgrounds = [
+  'mummy-bg-sunday',    // 0 - Sunday
+  'mummy-bg-monday',    // 1 - Monday
+  'mummy-bg-tuesday',   // 2 - Tuesday
+  'mummy-bg-wednesday', // 3 - Wednesday
+  'mummy-bg-thursday',  // 4 - Thursday
+  'mummy-bg-friday',    // 5 - Friday
+  'mummy-bg-saturday',  // 6 - Saturday
+];
 
 const TalkToMummy = () => {
   const [message, setMessage] = useState('');
@@ -78,8 +89,14 @@ const TalkToMummy = () => {
     });
   };
 
+  // Get day-based background class
+  const dayBgClass = useMemo(() => {
+    const dayOfWeek = new Date().getDay();
+    return dayBackgrounds[dayOfWeek];
+  }, []);
+
   return (
-    <div className="meom-section">
+    <div className={`meom-section ${dayBgClass}`}>
       <h2 className="meom-section-title">Talk to Mummy</h2>
       
       {/* Chat Container */}
