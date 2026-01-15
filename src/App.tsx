@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
+import ParallaxBackground from "@/components/ParallaxBackground";
 import Welcome from "./pages/Welcome";
 import Auth from "./pages/Auth";
 import SetupNameFirebase from "./pages/SetupNameFirebase";
@@ -15,6 +16,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <ParallaxBackground />
       <Toaster />
       <Sonner />
       <BrowserRouter>
