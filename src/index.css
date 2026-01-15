@@ -234,3 +234,53 @@
     font-family: var(--font-body);
   }
 }
+
+/* Parallax floating orbs */
+.parallax-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.4;
+}
+
+.parallax-orb-1 {
+  width: 200px;
+  height: 200px;
+  background: hsl(var(--primary) / 0.08);
+  top: 20%;
+  left: 70%;
+  animation: float-gentle 20s ease-in-out infinite;
+}
+
+.parallax-orb-2 {
+  width: 150px;
+  height: 150px;
+  background: hsl(var(--accent) / 0.12);
+  top: 50%;
+  left: 25%;
+  animation: float-gentle 25s ease-in-out infinite reverse;
+}
+
+.parallax-orb-3 {
+  width: 180px;
+  height: 180px;
+  background: hsl(var(--warmth) / 0.06);
+  top: 75%;
+  right: 30%;
+  animation: float-gentle 22s ease-in-out infinite 5s;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-15px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(25px, 15px) scale(1.02);
+  }
+}
