@@ -235,52 +235,73 @@
   }
 }
 
-/* Parallax floating orbs */
+/* Parallax floating orbs - more visible */
 .parallax-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.4;
+  filter: blur(30px);
+  opacity: 0.6;
 }
 
 .parallax-orb-1 {
-  width: 200px;
-  height: 200px;
-  background: hsl(var(--primary) / 0.08);
-  top: 20%;
-  left: 70%;
-  animation: float-gentle 20s ease-in-out infinite;
+  width: 280px;
+  height: 280px;
+  background: hsl(var(--primary) / 0.2);
+  top: 15%;
+  left: 65%;
+  animation: float-gentle 18s ease-in-out infinite;
 }
 
 .parallax-orb-2 {
-  width: 150px;
-  height: 150px;
-  background: hsl(var(--accent) / 0.12);
-  top: 50%;
-  left: 25%;
-  animation: float-gentle 25s ease-in-out infinite reverse;
+  width: 220px;
+  height: 220px;
+  background: hsl(var(--accent) / 0.25);
+  top: 45%;
+  left: 10%;
+  animation: float-gentle 22s ease-in-out infinite reverse;
 }
 
 .parallax-orb-3 {
+  width: 260px;
+  height: 260px;
+  background: hsl(var(--warmth) / 0.18);
+  top: 70%;
+  right: 15%;
+  animation: float-gentle 20s ease-in-out infinite 3s;
+}
+
+.parallax-orb-4 {
   width: 180px;
   height: 180px;
-  background: hsl(var(--warmth) / 0.06);
-  top: 75%;
-  right: 30%;
-  animation: float-gentle 22s ease-in-out infinite 5s;
+  background: hsl(var(--secondary) / 0.3);
+  top: 25%;
+  left: 20%;
+  animation: float-gentle 25s ease-in-out infinite 8s;
+}
+
+.parallax-orb-5 {
+  width: 200px;
+  height: 200px;
+  background: hsl(var(--primary) / 0.15);
+  top: 55%;
+  right: 35%;
+  animation: float-gentle 23s ease-in-out infinite 5s reverse;
 }
 
 @keyframes float-gentle {
   0%, 100% {
     transform: translate(0, 0) scale(1);
   }
-  25% {
-    transform: translate(20px, -30px) scale(1.05);
+  20% {
+    transform: translate(30px, -40px) scale(1.08);
   }
-  50% {
-    transform: translate(-15px, 20px) scale(0.95);
+  40% {
+    transform: translate(-25px, 30px) scale(0.95);
   }
-  75% {
-    transform: translate(25px, 15px) scale(1.02);
+  60% {
+    transform: translate(40px, 20px) scale(1.05);
+  }
+  80% {
+    transform: translate(-20px, -25px) scale(0.98);
   }
 }
